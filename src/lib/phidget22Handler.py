@@ -1,4 +1,5 @@
 import time
+import json
 
 ############
 #intialize timer
@@ -24,17 +25,13 @@ def onPositionChange(self, positionChange, timeChange, indexTriggered):
     print("IndexTriggered: " + str(indexTriggered))
     print("----------")
 
-    #write datas from encoder in a logger file fh
-    global fh
-    fh.write(str(t1) + "," + str(positionChange) + ", " + str(timeChange) + ", " + str(indexTriggered) + "\n")
-
     #publish datas from encoder in topic
     data = {
         "TimeRecording": t1,
         "PositionChange": positionChange,
-        "IndexTriggered" : timeChange
+        "TimeChange": timeChange,
+        "IndexTriggered" : indexTriggered
     }
     json_string = json.dumps(data)
     print json_string
-    global client
-    client.publish("toto/toto",json_string)
+    self.client.publish(self.clientTopic,json_string)
