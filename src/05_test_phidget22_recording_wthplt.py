@@ -42,7 +42,7 @@ def main():
         #Create your Phidget channels
         encoder0 = Encoder()
 
-        #Set addressing parameters to specify which channel to open (if any)
+        #Set addressing parameters to specify
         encoder0.client=client
         encoder0.clientTopic=config.get('MQTT','topic')
         encoder0.printLog=config.getboolean('encoder','printLog')
