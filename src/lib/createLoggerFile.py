@@ -1,7 +1,5 @@
 import os
 
-def hello():
-    print("Hello World !")
 ############
 def createLoggerFile(config):
     #filename from config file
