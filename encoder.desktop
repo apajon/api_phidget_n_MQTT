@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=EncoderPhidget22
+Exec=lxterminal -t "Run Phidget22 encoder recording script" --working-directory=/home/pi/Documents/test_RPi_python/test_api_phidget/ -e ./04_test_phidget22_recording_wthcfg.py
+StartupNotify=false
+Terminal=false
