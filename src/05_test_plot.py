@@ -9,9 +9,12 @@ if sys.version_info.major!=2 and sys.version_info.major!=3:
     print("bad python version")
     sys.exit()
 
-from lib import createLoggerFile as logger
+import numpy as np
+import matplotlib.pyplot as plt
+
 from lib import MQTT_client
 from lib import loggerHandler
+
 
 ############
 def main():
@@ -21,18 +24,13 @@ def main():
     
     print("opening configuration file : config.cfg")
     config.read('config.cfg')
-
-    ############
-    #filename from config file
-    fh=logger.createLoggerFile(config)
     
     ############
     #connect to mqtt broker
-    client=MQTT_client.createClient("LoggerEncoder",config)
+    client=MQTT_client.createClient("PlotterEncoder",config)
     
     #Set addressing parameters to specify
-    client.fh=fh
-    client.printLog=config.getboolean('Logger','printLog')
+#     client.printLog=config.getboolean('Logger','printLog')
 
     #attach function to callback
     client.on_message=loggerHandler.on_message
@@ -53,5 +51,15 @@ def main():
     finally:
         #stop the loop
         client.loop_stop()
+        
+    ############
+    plt.axis([0, 10, 0, 1])
+
+    for i in range(10):
+        y = np.random.random()
+        plt.scatter(i, y)
+        plt.pause(0.05)
+
+    plt.show()
 
 main()

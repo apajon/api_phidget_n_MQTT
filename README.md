@@ -23,3 +23,9 @@ In test_api_phidget/, there is encoder.desktop you can copy on the desktop and r
 installation : 'pip install paho-mqtt'
 <source web>
 http://www.steves-internet-guide.com/into-mqtt-python-client/
+
+<matplotlib installation>
+sudo apt update
+sudo apt install python3-matplotlib
+sudo apt-get install python-matplotlib
+
