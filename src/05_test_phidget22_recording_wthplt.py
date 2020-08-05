@@ -7,12 +7,13 @@ from Phidget22.LogLevel import *
 from Phidget22.Devices.Encoder import *
 import traceback
 
+from lib import importConfigParser
 
 import sys
 if sys.version_info.major==2:
     import ConfigParser #Python 2
 if sys.version_info.major==3:
-    import configparser #Python 3
+    import configparser as ConfigParser #Python 3
 if sys.version_info.major!=2 and sys.version_info.major!=3:
     print("bad python version")
     sys.exit()

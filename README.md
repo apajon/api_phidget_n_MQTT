@@ -20,7 +20,9 @@ In test_api_phidget/, there is encoder.desktop you can copy on the desktop and r
 !!!Warning!!! use "sudo chmod +x file.py" to give the right to open the file
 
 <paho.mqtt.client library in python>
-installation : 'pip install paho-mqtt'
+installation : 	'pip install paho-mqtt'
+		or
+		'pip3 install paho-mqtt'
 <source web>
 http://www.steves-internet-guide.com/into-mqtt-python-client/
 
