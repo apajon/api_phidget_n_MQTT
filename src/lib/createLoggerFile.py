@@ -22,6 +22,6 @@ def createLoggerFile(config):
     #create recording file
     print("Logger file name: "+config.get('filenameLogger','filename')+"%s.txt" % format(i, '02d'))
     fh = open(filename, "w")
-    fh.write(config.get('filenameLogger','firstLine'))
+    fh.write(config.get('filenameLogger','firstLine')+"\n")
     
     return fh

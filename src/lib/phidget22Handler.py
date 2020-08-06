@@ -10,6 +10,9 @@ t0 = time.time()
 
 def onAttach(self):
     print("Attach!")
+    
+    print("set DataInterval as "+str(self.chooseDataInterval)+"ms")
+    self.setDataInterval(self.chooseDataInterval)
 
 def onDetach(self):
     print("Detach!")

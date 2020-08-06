@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from Phidget22.PhidgetException import *
 from Phidget22.Phidget import *
@@ -6,8 +6,6 @@ from Phidget22.Devices.Log import *
 from Phidget22.LogLevel import *
 from Phidget22.Devices.Encoder import *
 import traceback
-
-from lib import importConfigParser
 
 import sys
 if sys.version_info.major==2:
@@ -47,6 +45,7 @@ def main():
         encoder0.client=client
         encoder0.clientTopic=config.get('MQTT','topic')
         encoder0.printLog=config.getboolean('encoder','printLog')
+        encoder0.chooseDataInterval=config.getint('encoder','dataInterval')
 
         #Assign any event handlers you need before calling open so that no events are missed.
         encoder0.setOnPositionChangeHandler(handler.onPositionChange)
@@ -59,7 +58,7 @@ def main():
         #Do stuff with your Phidgets here or in your event handlers.
 
         #Change the data interval from the encoder based on config datas
-        encoder0.setDataInterval(config.getint('encoder','dataInterval'))
+#         encoder0.setDataInterval(config.getint('encoder','dataInterval'))
 
         #Interupt script by pressing Enter
         try:
