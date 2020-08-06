@@ -31,3 +31,5 @@ sudo apt update
 sudo apt install python3-matplotlib
 sudo apt-get install python-matplotlib
 
+<CSV reader pandas>
+sudo pip3 install pandas
