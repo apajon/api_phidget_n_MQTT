@@ -55,9 +55,10 @@ def main():
     fig, ax1 = plt.subplots()
     
     #plot the encoder velocity in time
-    lns1=ax1.plot(time,vel,label="Velocity")
+    color = 'tab:blue'
+    lns1=ax1.plot(time,vel,label="Velocity", color=color)
     ax1.set_xlabel("time[s]")
-    ax1.set_ylabel("Velocity[m/s]")
+    ax1.set_ylabel("Velocity[m/s]", color=color)
     
     color = 'tab:blue'
     ax1.tick_params(axis='y', labelcolor=color)
