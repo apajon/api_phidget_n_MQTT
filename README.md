@@ -173,10 +173,12 @@ The repo is organised as followed
 - `api_phidget_RUN.sh` : script to run `phidget22PlotLastLogMeasures.py`, can be put on [Desktop](#132-PLOT-script)
 - `/src` : folder with Python source files
   - `config.cfg` : config file gathering configuration parameters for the whole Python code
-  - `phidget22GetMeasures.py`
-  - `phidget22PlotLastLogMeasures.py`
-  - `phidget22SaveLogMeasures.py`
-  - `/lib` : folder with Python hoemade library files
+  - `phidget22GetMeasures.py` : code to get measures from the Phidget22 encoder and publish them on a topic of the local paho.MQTT server
+  - `phidget22PlotLastLogMeasures.py` : code to plot the measures saved in the last log file
+  > WARNING it get the last indented log file beginning by 00 not the last in term of date of recording
+  >
+  - `phidget22SaveLogMeasures.py` : code to get measures of the Phidget22 encoder published  on a topic of the local paho.MQTT server and save them in a log file
+  - `/lib` : folder with Python homemade library files
 ____
 # 3-Running
 ## 3.1-Get measures
