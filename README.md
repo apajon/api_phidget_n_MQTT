@@ -1,4 +1,15 @@
 # api_phidget_n_MQTT
+This project contain src file to receive measures from Phidget22's encoder, send them into a topic of a paho.MQTT server, get back those measures from the paho.MQTT server to save them into a log file and finally plot the measures from the last log.
+
+Made for Python3 but also work in Python2
+____
+
+# Installation
+## Get the files
+
+To install the software,
+
+##
 
 <library phidget installation>
 sudo apt-get install libusb-1.0-0-dev
