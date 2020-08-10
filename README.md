@@ -1,7 +1,7 @@
 # api_phidget_n_MQTT
 This project contain src file to receive measures from Phidget22's encoder, send them into a topic of a paho.MQTT server, get back those measures from the paho.MQTT server to save them into a log file and finally plot the measures from the last log.
 
-Made for Python3 but also work in Python2
+Made for Python3 but also work in Python2 on raspbian for RaspberryPi 3 or 4 with a virtual Desktop like with VNCserver
 ____
 # Table of content
 - [1-Installation procedure](#1-Installation-procedure)
@@ -15,12 +15,25 @@ ____
 # 1-Installation procedure
 ## 1.1-Get the files
 
-To install the software :
+To install the software on raspbian virtual Desktop:
+- open terminal with **`Ctrl+Alt+T`**
+- go in the local folder where you want to install
+```bash
+cd /PATH
+```
+>example of PATH **`/home/pi/Documents`**
+
 - clone the repo [**`api_phidget_n_MQTT`**](https://github.com/apajon/api_phidget_n_MQTT)
 ```bash
 git clone https://github.com/apajon/api_phidget_n_MQTT
 ```
 or download it as a .zip file and then extract it
+```bash
+wget https://github.com/apajon/api_phidget_n_MQTT/archive/master.zip
+unzip api_phidget_n_MQTT-master.zip
+mv api_phidget_n_MQTT-master api_phidget_n_MQTT
+```
+Whatever the method, you now have a folder named **`api_phidget_n_MQTT`** in the chosen folder at **`/PATH`**
 - install the required [libraries](#intall-libraries)
 
 - *-OPTION-* put [script file](#13-Set-Desktop-scripts) on the desktop
@@ -62,14 +75,16 @@ sudo apt-get install python-matplotlib
 sudo pip3 install pandas
 
 ## 1.3-Set Desktop scripts
+To install the software on raspbian virtual Desktop:
+- open terminal with **`Ctrl+Alt+T`**
+- go in the local folder **`/PATH`** where you have installed the software
+```bash
+cd /PATH/
+```
 ### 1.3.1-RUN script
-- copy the files **`api_phidget_RUN.sh`** and **`api_phidget_PLOT.sh`** on the desktop
+- copy the file **`api_phidget_RUN.sh`** on the desktop
 
 - open with a text editor **`api_phidget_RUN.sh`**
->for example
-```	bash
-sudo nano api_phidget_RUN.sh
-```
 
 - find the lines
 ```bash
@@ -90,6 +105,7 @@ by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clon
 - Save and close
 
 ### 1.3.2-PLOT script
+- copy the file **`api_phidget_PLOT.sh`** on the desktop
 - open with a text editor **`api_phidget_PLOT.sh`**
 - find the line
 ```bash
