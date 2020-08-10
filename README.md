@@ -3,9 +3,14 @@ This project contain src file to receive measures from Phidget22's encoder, send
 
 Made for Python3 but also work in Python2
 ____
-
-# Installation procedure
-## Get the files
+# Table of content
+- [1-Installation procedure](#1-Installation-procedure)
+ - [1.1-Get the files](#1.1-Get-the-files)
+ - [1.2-Install libraries](#1.2-Install-libraries)
+ - [1.3-Set Desktop scripts](#1.3-Set-Desktop-scripts)
+____
+# 1-Installation procedure
+## 1.1-Get the files
 
 To install the software :
 - clone the repo [**`api_phidget_n_MQTT`**](https://github.com/apajon/api_phidget_n_MQTT)
@@ -13,41 +18,8 @@ To install the software :
 git clone https://github.com/apajon/api_phidget_n_MQTT
 ```
 - install the required [libraries](#intall-libraries)
-- copy the files **`api_phidget_RUN.sh`** and **`api_phidget_PLOT.sh`** on the desktop
 
-- open with a text editor **`api_phidget_RUN.sh`**,
->find the lines
-```bash
-lxterminal -t "Run Phidget22 encoder reading script" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22GetMeasures.py
-```
-and
-```bash
-lxterminal -t "Run encoder recording script" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22SaveLogMeasures.py
-```
-Replace the folder PATH
-```bash
- --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/
-```
-by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clone the repo
-```bash
- --working-directory=PATH/api_phidget_n_MQTT/src
-```
-
-- open with a text editor **`api_phidget_PLOT.sh`**,
->find the line
-```bash
-lxterminal -t "Plot last Phidget22 recorded logger" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22PlotLastLogMeasures.py
-```
-Replace the folder PATH
-```bash
- --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/
-```
-by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clone the repo
-```bash
- --working-directory=PATH/api_phidget_n_MQTT/src
-```
-
-## Install libraries
+## 1.2-Install libraries
 
 <library phidget installation>
 sudo apt-get install libusb-1.0-0-dev
@@ -82,3 +54,38 @@ sudo apt-get install python-matplotlib
 
 <CSV reader pandas>
 sudo pip3 install pandas
+
+## 1.3-Set Desktop scripts
+- copy the files **`api_phidget_RUN.sh`** and **`api_phidget_PLOT.sh`** on the desktop
+
+- open with a text editor **`api_phidget_RUN.sh`**,
+>find the lines
+```bash
+lxterminal -t "Run Phidget22 encoder reading script" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22GetMeasures.py
+```
+and
+```bash
+lxterminal -t "Run encoder recording script" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22SaveLogMeasures.py
+```
+Replace the folder PATH
+```bash
+ --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/
+```
+by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clone the repo
+```bash
+ --working-directory=PATH/api_phidget_n_MQTT/src
+```
+
+- open with a text editor **`api_phidget_PLOT.sh`**,
+>find the line
+```bash
+lxterminal -t "Plot last Phidget22 recorded logger" --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/ -e ./phidget22PlotLastLogMeasures.py
+```
+Replace the folder PATH
+```bash
+ --working-directory=/home/pi/Documents/api_phidget_n_MQTT/src/
+```
+by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clone the repo
+```bash
+ --working-directory=PATH/api_phidget_n_MQTT/src
+```
