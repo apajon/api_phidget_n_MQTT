@@ -67,7 +67,7 @@ sudo pip3 install pandas
 
 - open with a text editor **`api_phidget_RUN.sh`**
 >for example
->```	bash
+```	bash
 sudo nano api_phidget_RUN.sh
 ```
 
