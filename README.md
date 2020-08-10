@@ -169,14 +169,14 @@ by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clon
 ____
 # 2-Code overview
 The repo is organised as followed
-- **`api_phidget_PLOT.sh`** : blabla
-- `api_phidget_RUN.sh` : blabla
-- `/src`
-  - `config.cfg`
+- **`api_phidget_PLOT.sh`** : script to run simultany `src/phidget22GetMeasures.py` and `src/phidget22SaveLogMeasures.py`, can be put on [Desktop](#131-RUN-script)
+- `api_phidget_RUN.sh` : script to run `phidget22PlotLastLogMeasures.py`, can be put on [Desktop](#132-PLOT-script)
+- `/src` : folder with Python source files
+  - `config.cfg` : config file gathering configuration parameters for the whole Python code
   - `phidget22GetMeasures.py`
   - `phidget22PlotLastLogMeasures.py`
   - `phidget22SaveLogMeasures.py`
-  - `/lib`
+  - `/lib` : folder with Python hoemade library files
 ____
 # 3-Running
 ## 3.1-Get measures
