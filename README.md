@@ -5,7 +5,7 @@ Made for Python3 but also work in Python2 on raspbian for RaspberryPi 3 or 4 wit
 ____
 # Table of content
 - [1-Installation procedure](#1-Installation-procedure)
- - [1.1-Get the files](#11-Get-the-files)
+ - [1.1-Get the code](#11-Get-the-code)
  - [1.2-Libraries](#12-Libraries)
    - [1.2.1-Needed Libraries](#121-Needed-Libraries)
    - [1.2.2-Install Libraries](#122-Install-Libraries)
@@ -20,7 +20,7 @@ ____
  - [3.4-Desktop script](#34-Desktop-script)
 ____
 # 1-Installation procedure
-## 1.1-Get the files
+## 1.1-Get the code
 
 To install the software on raspbian virtual Desktop:
 - open terminal with **`Ctrl+Alt+T`**
@@ -115,7 +115,6 @@ sudo pip2 install pandas
 source web
 >https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html
 
-
 ## 1.3-Set Desktop scripts
 In test_api_phidget/, there is encoder.desktop you can copy on the desktop and replace the PATH to the python script to run it directly by clicking
 !!!Warning!!! use "sudo chmod +x file.py" to give the right to open the file
@@ -169,7 +168,15 @@ by the **``PATH/api_phidget_n_MQTT/src``** in your local computer where you clon
 - save and close
 ____
 # 2-Code overview
-TODO
+The repo is organised as followed
+- **`api_phidget_PLOT.sh`** : blabla
+- `api_phidget_RUN.sh` : blabla
+- `/src`
+  - `config.cfg`
+  - `phidget22GetMeasures.py`
+  - `phidget22PlotLastLogMeasures.py`
+  - `phidget22SaveLogMeasures.py`
+  - `/lib`
 ____
 # 3-Running
 ## 3.1-Get measures
