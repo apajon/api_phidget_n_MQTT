@@ -5,9 +5,9 @@ Made for Python3 but also work in Python2
 ____
 # Table of content
 - [1-Installation procedure](#1-Installation-procedure)
- - [1.1-Get the files](#1.1-Get-the-files)
- - [1.2-Install libraries](#1.2-Install-libraries)
- - [1.3-Set Desktop scripts](#1.3-Set-Desktop-scripts)
+ - [1.1-Get the files](#1-Get-the-files)
+ - [1.2-Install libraries](#2-Install-libraries)
+ - [1.3-Set Desktop scripts](#3-Set-Desktop-scripts)
 ____
 # 1-Installation procedure
 ## 1.1-Get the files
