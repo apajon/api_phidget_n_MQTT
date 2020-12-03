@@ -5,15 +5,15 @@ def createClient(clientName,config):
     
     #create new instance
     print("MQTT creating new instance named : "+clientName)
-    client = mqtt.Client(clientName) 
-    
+    client = mqtt.Client(clientName)
+
     #set username and password
     print("MQTT setting  password")
     client.username_pw_set(username=config.get('MQTT','usr'),password=config.get('MQTT','pswd'))
-    
+
     #connection to broker
     broker_address=config.get('MQTT','broker_address')
     print("MQTT connecting to broker : "+broker_address)
     client.connect(broker_address) #connect to broker
-    
+
     return client

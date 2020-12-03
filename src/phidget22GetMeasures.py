@@ -7,27 +7,30 @@ from Phidget22.LogLevel import *
 from Phidget22.Devices.Encoder import *
 import traceback
 
-import sys
-if sys.version_info.major==2:
+import asyncio
+
+# for Python 2/3 compatibility
+try:
     import ConfigParser #Python 2
-if sys.version_info.major==3:
+except ImportError:
     import configparser as ConfigParser #Python 3
-if sys.version_info.major!=2 and sys.version_info.major!=3:
-    print("bad python version")
-    sys.exit()
 
 from lib import phidget22Handler as handler
 from lib import MQTT_client
 
 ############
 def main():
-    
+
     ############
     #import config file
     config = ConfigParser.ConfigParser()
 
     print("opening configuration file : config.cfg")
     config.read('config.cfg')
+
+    # print("opening configuration file : config.json")
+    # async with open('config.cfg','r') as configfile:
+    #     await config.read(configfile)
 
     ############
     #connect to mqtt broker
