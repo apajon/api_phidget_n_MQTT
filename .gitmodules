@@ -1,0 +1,3 @@
+[submodule "src/lib_global_python.git"]
+	path = src/lib_global_python.git
+	url = https://apajon@github.com/apajon/lib_global_python.git
