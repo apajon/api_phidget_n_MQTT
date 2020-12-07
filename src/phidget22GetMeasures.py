@@ -16,7 +16,7 @@ except ImportError:
     import configparser as ConfigParser #Python 3
 
 from lib import phidget22Handler as handler
-from lib import MQTT_client
+from lib_global_python import MQTT_client
 
 ############
 def main():
