@@ -72,6 +72,13 @@ printLog=True
 ```
 BOOL variable to choose to print with `True` or not with `False` the encoder measured values from the MQTT in the terminal by [phidget22SaveLogMeasures](phidget22SaveLogMeasures.py)
 
+### saveLog
+;Bool to choose to save or not the Gaspard measured values in a csv file
+```bash
+saveLog=True
+```
+BOOL variable to choose to save with `True` or not with `False` the Gaspard measured values from the MQTT in a csv Log file by [phidget22SaveLogMeasures](phidget22SaveLogMeasures.py)
+
 ____
 ## [MQTT]
 Config parameters of the MQTT server and topic in the MQTT server to publish and subscribe
