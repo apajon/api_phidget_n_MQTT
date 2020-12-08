@@ -34,6 +34,10 @@ cd /PATH
 - clone the repo [**`api_phidget_n_MQTT`**](https://github.com/apajon/api_phidget_n_MQTT)
 ```bash
 git clone --recursive https://github.com/apajon/api_phidget_n_MQTT
+cd src/lib_global/
+git branch
+# verify that main branch is existing
+git checkout main
 ```
 or download it as a .zip file and then extract it
 ```bash
