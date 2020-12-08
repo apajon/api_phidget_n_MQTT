@@ -41,7 +41,7 @@ def main():
     client.loop_start()
 
     #subscribe topic
-    topic_encoder=config.get('MQTT','topic')
+    topic_encoder=config.get('MQTT','topic_subscribe')
     print ("Subscribing to topic",topic_encoder)
     client.subscribe(topic_encoder)
 

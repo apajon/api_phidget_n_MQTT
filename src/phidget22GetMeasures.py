@@ -46,7 +46,7 @@ def main():
 
         #Set addressing parameters to specify
         encoder0.client=client
-        encoder0.clientTopic=config.get('MQTT','topic')
+        encoder0.clientTopic=config.get('MQTT','topic_publish')
         encoder0.printLog=config.getboolean('encoder','printLog')
         encoder0.chooseDataInterval=config.getint('encoder','dataInterval')
 
