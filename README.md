@@ -34,7 +34,7 @@ cd /PATH
 - clone the repo [**`api_phidget_n_MQTT`**](https://github.com/apajon/api_phidget_n_MQTT)
 ```bash
 git clone --recursive https://github.com/apajon/api_phidget_n_MQTT
-cd src/lib_global/
+cd src/lib_global_python/
 git branch
 # verify that main branch is existing
 git checkout main
