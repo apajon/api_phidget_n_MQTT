@@ -28,10 +28,6 @@ def main():
     print("opening configuration file : config.cfg")
     config.read('config.cfg')
 
-    # print("opening configuration file : config.json")
-    # async with open('config.cfg','r') as configfile:
-    #     await config.read(configfile)
-
     ############
     #connect to mqtt broker
     client=MQTT_client.createClient("Encoder",config)
@@ -77,6 +73,8 @@ def main():
         traceback.print_exc()
         print("")
         print("PhidgetException " + str(ex.code) + " (" + ex.description + "): " + ex.details)
+    finally:
+        encoder0.close()
 
 ############
 main()

@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 
-import sys
-if sys.version_info.major==2:
+# for Python 2/3 compatibility
+try:
     import ConfigParser #Python 2
-if sys.version_info.major==3:
+except ImportError:
     import configparser as ConfigParser #Python 3
-if sys.version_info.major!=2 and sys.version_info.major!=3:
-    print("bad python version")
-    sys.exit()
 
 from lib_global_python import createLoggerFile as logger
 from lib_global_python import MQTT_client

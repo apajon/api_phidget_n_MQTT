@@ -64,7 +64,7 @@ Pidget22 encoder resolution in `mm/pulse`
 
 ____
 ## [Logger]
-[phidget22SaveLogMeasures](phidget22SaveLogMeasures.py)
+Section to set the config parameters of phidget22 encoder used in [phidget22SaveLogMeasures](phidget22SaveLogMeasures.py)
 
 ### printLog
 ```bash
