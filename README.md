@@ -57,6 +57,11 @@ Whatever the method, you now have a folder named **`api_phidget_n_MQTT`** in the
 - [matplotlib installation](####-matplotlib-installation)
 - [CSV reader pandas](####-CSV-reader-pandas)
 
+The three last library can also be installed at once with with
+```bash
+pip3 install -r requirements.txt
+```
+
 ### 1.2.2-Install Libraries
 #### library phidget installation
 In a terminal go to **`download`** folder and do:
@@ -102,6 +107,10 @@ In a terminal run for Python3
 ```bash
 sudo apt update
 sudo apt install python3-matplotlib
+```
+or
+```bash
+pip3 install matplotlib
 ```
 or for Python2
 ```bash
