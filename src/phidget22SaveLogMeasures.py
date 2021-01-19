@@ -30,6 +30,8 @@ def main():
     #Set addressing parameters to specify
     client.fh=fh
     client.printLog=config.getboolean('Logger','printLog')
+    client.firstLine=config.get('filenameLogger','firstLine')
+    client.saveLog=config.getboolean('Logger','saveLog')
 
     #attach function to callback
     client.on_message=loggerHandler.on_message
