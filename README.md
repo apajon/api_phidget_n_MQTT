@@ -3,6 +3,9 @@
 This project contain src file to receive measures from Phidget22's encoder, send them into a topic of a paho.MQTT server, get back those measures from the paho.MQTT server to save them into a log file and finally plot the measures from the last log.
 
 Made for Python3 but also work in Python2 on raspbian for RaspberryPi 3 or 4 with a virtual Desktop like with VNCserver
+
+Has been created for PhidgetEncoder HighSpeed.
+> <https://www.phidgets.com/?tier=3&catid=4&pcid=2&prodid=1040>
 ____
 
 # Table of content
