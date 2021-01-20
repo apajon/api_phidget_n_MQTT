@@ -19,6 +19,11 @@ class encoderWthHandler(Encoder):
 
         self.t0 = time.time()
         self.t1 = time.time()-self.t0
+
+        self.positionChange = 0
+        self.timeChange = 0
+        self.indexTriggered = 0
+
         self.printLog=False
         self.chooseDataInterval=None
         self.isConnected = False
@@ -55,6 +60,9 @@ class encoderWthHandler(Encoder):
     def onPositionChange(self, positionChange, timeChange, indexTriggered):
         #compute duration since the begining ot the script
         self.t1=time.time()-self.t0
+        self.positionChange = positionChange
+        self.timeChange = timeChange
+        self.indexTriggered = indexTriggered
         
         # log results
         if self.printLog:
@@ -62,9 +70,9 @@ class encoderWthHandler(Encoder):
             print("TimeRecording: " + str(self.t1))
 
             #print datas from encoder
-            print("PositionChange: " + str(positionChange))
-            print("TimeChange: " + str(timeChange))
-            print("IndexTriggered: " + str(indexTriggered))
+            print("PositionChange: " + str(self.positionChange))
+            print("TimeChange: " + str(self.timeChange))
+            print("IndexTriggered: " + str(self.indexTriggered))
             
             print("----------")
 
@@ -101,12 +109,15 @@ class encoderWthMQTT(encoderWthHandler):
     def __init__(self,config):
         super().__init__()
         self.clientTopic=None
-        self.clientEncoder = MQTT_client.createClient("Encoder", config)
+        try:
+            self.clientEncoder = MQTT_client.createClient("Encoder", config)
+        except:
+            self.clientEncoder = None
 
     def ConnectToEnco(self, config):
-        try:
+        if self.clientEncoder:
             self.clientTopic = config.get('encoder', 'topic_publish')
-        except:
+        else:
             self.clientTopic=None
         super().ConnectToEnco(config)
 
@@ -124,9 +135,9 @@ class encoderWthMQTT(encoderWthHandler):
             # publish datas from encoder in topic
             data = {
                 "TimeRecording": self.t1,
-                "PositionChange": positionChange,
-                "TimeChange": timeChange,
-                "IndexTriggered" : indexTriggered
+                "PositionChange": self.positionChange,
+                "TimeChange": self.timeChange,
+                "IndexTriggered" : self.indexTriggered
             }
             # json_string = json.dumps(data)
             # print json_string
