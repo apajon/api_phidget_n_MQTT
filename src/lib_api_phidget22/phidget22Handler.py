@@ -8,6 +8,7 @@ import traceback
 import time
 import json
 import warnings
+from threading import Event
 
 from ..lib_global_python import MQTT_client
 
@@ -29,7 +30,9 @@ class encoderWthHandler(Encoder):
         self.isConnected = False
         self.timeWaitForAttachment=5000
 
-
+        # Initialising an event object
+        self.event_obj_onPositionChange = Event()
+    
         # Assign any event handlers you need before calling open so that no events are missed.
         self.setHandlers()
 
@@ -47,6 +50,7 @@ class encoderWthHandler(Encoder):
         except:
             pass
 
+    @staticmethod
     def onAttach(self):
         print("Attach!")
         
@@ -54,15 +58,19 @@ class encoderWthHandler(Encoder):
             print("set DataInterval as "+str(self.chooseDataInterval)+"ms")
             self.setDataInterval(self.chooseDataInterval)
 
+    @staticmethod
     def onDetach(self):
         print("Detach!")
 
+    @staticmethod
     def onPositionChange(self, positionChange, timeChange, indexTriggered):
         #compute duration since the begining ot the script
         self.t1=time.time()-self.t0
         self.positionChange = positionChange
         self.timeChange = timeChange
         self.indexTriggered = indexTriggered
+
+        self.event_obj_onPositionChange.set()
         
         # log results
         if self.printLog:
@@ -128,8 +136,9 @@ class encoderWthMQTT(encoderWthHandler):
         except:
             pass
 
+    @staticmethod
     def onPositionChange(self, positionChange, timeChange, indexTriggered):
-        super().onPositionChange(positionChange, timeChange, indexTriggered)
+        super().onPositionChange(self, positionChange, timeChange, indexTriggered)
 
         if self.clientTopic:
             # publish datas from encoder in topic
