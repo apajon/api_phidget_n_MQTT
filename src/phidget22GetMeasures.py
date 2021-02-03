@@ -7,7 +7,14 @@ from Phidget22.LogLevel import *
 from Phidget22.Devices.Encoder import *
 import traceback
 
-import asyncio
+# import asyncio
+
+# import os
+# # Make sure current path is this file path
+# abspath = os.path.abspath(__file__)
+# dname = os.path.dirname(abspath)
+# os.chdir(dname)
+
 
 # for Python 2/3 compatibility
 try:
@@ -20,6 +27,12 @@ from lib_global_python import MQTT_client
 
 ############
 def main():
+
+    # Make sure current path is this file path
+    abspath = os.path.abspath(__file__)
+    dname = os.path.dirname(abspath)
+    os.chdir(dname)
+
 
     ############
     #import config file
