@@ -25,6 +25,9 @@ class encoderWthHandler(Encoder):
         self.timeChange = 0
         self.indexTriggered = 0
 
+        self.resolution = 1
+        self.distance = 0
+
         self.printLog=False
         self.chooseDataInterval=None
         self.isConnected = False
@@ -47,6 +50,7 @@ class encoderWthHandler(Encoder):
             # Set addressing parameters to specify
             self.printLog = config.getboolean('encoder', 'printLog')
             self.chooseDataInterval = config.getint('encoder', 'dataInterval')
+            self.resolution = config.getfloat('encoder', 'resolution')
         except:
             pass
 
@@ -69,6 +73,7 @@ class encoderWthHandler(Encoder):
         self.positionChange = positionChange
         self.timeChange = timeChange
         self.indexTriggered = indexTriggered
+        self.distance += abs(positionChange) * self.resolution
 
         self.event_obj_onPositionChange.set()
         
@@ -81,6 +86,7 @@ class encoderWthHandler(Encoder):
             print("PositionChange: " + str(self.positionChange))
             print("TimeChange: " + str(self.timeChange))
             print("IndexTriggered: " + str(self.indexTriggered))
+            print("Distance: " + str(self.distance))
             
             print("----------")
 
@@ -109,6 +115,9 @@ class encoderWthHandler(Encoder):
             traceback.print_exc()
             print("")
             print("PhidgetException " + str(ex.code) + " (" + ex.description + "): " + ex.details)
+
+    def ResetDistance(self):
+        self.distance = 0
 
     def DisconnectEnco(self):
         self.close()
@@ -146,7 +155,8 @@ class encoderWthMQTT(encoderWthHandler):
                 "TimeRecording": self.t1,
                 "PositionChange": self.positionChange,
                 "TimeChange": self.timeChange,
-                "IndexTriggered" : self.indexTriggered
+                "IndexTriggered" : self.indexTriggered,
+                "Distance" : self.distance
             }
             # json_string = json.dumps(data)
             # print json_string
