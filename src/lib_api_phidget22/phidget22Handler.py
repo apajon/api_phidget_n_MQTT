@@ -101,7 +101,10 @@ class encoderWthHandler(Encoder):
         # connection to Phidget encoder and wait for measures
         # publish the datas on config/MQTT/topic
         try:
-            Log.enable(LogLevel.PHIDGET_LOG_INFO, "phidgetlog.log")
+            try:
+                Log.enable(LogLevel.PHIDGET_LOG_INFO, "phidgetlog.log")
+            except:
+                pass
             # Create your Phidget channels
             # Set addressing parameters to specify
             self.setParameters(config)
